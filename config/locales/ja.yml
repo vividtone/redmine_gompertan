@@ -1,0 +1,11 @@
+# Gompertan plugin
+ja:
+  label_plugin_gompertan: チケット推移
+  download_svg_viewer: グラフが表示されない場合は<a href="http://www.adobe.com/jp/svg/viewer/install/" target="#">SVG Viewer</a>をインストールしてください。
+  gompertan_graph_title: チケット推移
+  gompertan_graph_issues_sum: 累積チケット
+  gompertan_graph_issues_new: 発生チケット
+  gompertan_graph_issues_open: 残存チケット(近似)
+  gompertan_graph_issues_close: 完了チケット(近似)
+  gompertan_graph_show_days: グラフを表示する日数
+  gompertan_graph_show_cwday: グラフを表示する曜日

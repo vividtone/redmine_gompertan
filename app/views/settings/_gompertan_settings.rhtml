@@ -1,0 +1,11 @@
+<p><label><%=l(:gompertan_graph_show_days)%></label><%= text_field_tag 'settings[show_days]', @settings['show_days'] %></p>
+<p><label><%=l(:gompertan_graph_show_cwday)%></label>
+	<%= check_box_tag 'settings[show_cwday1]',1, @settings['show_cwday1'] %><%=l('date.day_names')[1]%>&nbsp;
+	<%= check_box_tag 'settings[show_cwday2]',1, @settings['show_cwday2'] %><%=l('date.day_names')[2]%>&nbsp;
+	<%= check_box_tag 'settings[show_cwday3]',1, @settings['show_cwday3'] %><%=l('date.day_names')[3]%>&nbsp;
+	<%= check_box_tag 'settings[show_cwday4]',1, @settings['show_cwday4'] %><%=l('date.day_names')[4]%>&nbsp;
+	<%= check_box_tag 'settings[show_cwday5]',1, @settings['show_cwday5'] %><%=l('date.day_names')[5]%>&nbsp;
+	<%= check_box_tag 'settings[show_cwday6]',1, @settings['show_cwday6'] %><%=l('date.day_names')[6]%>&nbsp;
+	<%= check_box_tag 'settings[show_cwday7]',1, @settings['show_cwday7'] %><%=l('date.day_names')[0]%>&nbsp;
+</p>
+

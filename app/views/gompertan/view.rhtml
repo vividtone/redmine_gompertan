@@ -1,0 +1,10 @@
+<h2><%= l(:label_plugin_gompertan) %></h2>
+
+<%= l(:download_svg_viewer) %>
+<p>
+
+<%= tag("embed", :width => 600, :height => 300, :type => "image/svg+xml", :src => url_for(:controller => 'gompertan', :action => 'graph', :id => @project)) %>
+</td><td>
+<br />
+
+<% html_title l(:label_plugin_gompertan) -%>

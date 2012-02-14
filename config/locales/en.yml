@@ -1,0 +1,11 @@
+# Gompertan plugin
+en:
+  label_plugin_gompertan: Issues Graph
+  download_svg_viewer: If you cannot see the graph, please install <a href="http://www.adobe.com/svg/viewer/install/" target="#">SVG Viewer</a>.
+  gompertan_graph_title: Issues Graph
+  gompertan_graph_issues_sum: Total Issues
+  gompertan_graph_issues_new: New Issues
+  gompertan_graph_issues_open: Alive Issues(rough)
+  gompertan_graph_issues_close: Closed Issues(rough)
+  gompertan_graph_show_days: Period
+  gompertan_graph_show_cwday: day of the week
