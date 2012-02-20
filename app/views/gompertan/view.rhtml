@@ -3,7 +3,15 @@
 <%= l(:download_svg_viewer) %>
 <p>
 
-<%= tag("embed", :width => 600, :height => 300, :type => "image/svg+xml", :src => url_for(:controller => 'gompertan', :action => 'graph', :id => @project)) %>
+<div>
+  <% form_tag :action => :view do |f| %>
+    <label for="tracker_id"><%=h l(:label_tracker) %>:</label>
+    <%= select_tag('tracker_id', options_for_select({l(:label_all) => nil}, false) + options_from_collection_for_select(@project.trackers.all, :id, :name, @tracker.try(:id))) %>
+    <%= submit_tag "更新" %>
+  <% end %>
+</div>
+
+<%= tag("embed", :width => 600, :height => 300, :type => "image/svg+xml", :src => url_for(:controller => 'gompertan', :action => 'graph', :id => @project, :tracker_id => @tracker)) %>
 </td><td>
 <br />
 

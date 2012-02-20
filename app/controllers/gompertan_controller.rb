@@ -5,7 +5,7 @@ class GompertanController < ApplicationController
   unloadable
   
   layout 'base'  
-  before_filter :find_project, :authorize
+  before_filter :find_project, :find_tracker, :authorize
 
   def view
   end
@@ -25,10 +25,17 @@ private
     @project=Project.find(params[:id])
   end
 
+  def find_tracker
+    unless params[:tracker_id].blank?
+      @tracker = Tracker.find(params[:tracker_id])
+    end
+  end
+
   def graph_gompeltz
     days = Setting.plugin_gompertan_plugin['show_days'].to_i
     date_from = Date.today - days + 1
     cond = @project.project_condition(true)
+    cond << " AND (tracker_id = #{@tracker.id})" if @tracker
     
     issues_new_by_date ||=  Issue.count(:all, :conditions => ["(#{cond}) AND start_date BETWEEN ? AND ?", date_from, Date.today+1], :group => "start_date", :include => :project, :order => "start_date" )
     issues_close_by_date ||=  Issue.count(:all, :conditions => ["(#{cond}) AND #{IssueStatus.table_name}.is_closed=?  AND #{Issue.table_name}.updated_on BETWEEN ? AND ?", true, date_from, Date.today+1], :group => "#{Issue.table_name}.updated_on", :include => [:project, :status ], :order => "#{Issue.table_name}.updated_on" )
